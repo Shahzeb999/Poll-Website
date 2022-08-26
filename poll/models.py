@@ -10,7 +10,7 @@ class Poll(models.Model):
     option_three = models.CharField(max_length=30)
     option_four = models.CharField(max_length=30)
     date_posted = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User,default = 1,on_delete=models.CASCADE)
 
     option_one_count = models.IntegerField(default=0)
     option_two_count = models.IntegerField(default=0)
