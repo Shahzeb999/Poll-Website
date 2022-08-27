@@ -24,4 +24,4 @@ class Poll(models.Model):
         return self.option_one_count + self.option_two_count + self.option_three_count + self.option_four_count
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'pk': self.pk})
+        return reverse('poll-detail', kwargs={'pk': self.pk})

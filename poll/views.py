@@ -4,6 +4,14 @@ from django.http import HttpResponse
 from .forms import CreatePollForm
 from .models import Poll
 
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
+
 def home(request):
     context = {
         'polls' : Poll.objects.all()
@@ -57,3 +65,11 @@ def results(request, poll_id):
         'poll' : poll
     }
     return render(request, 'poll/results.html', context)
+
+class PostListView(ListView):
+    model = Poll
+    template_name = 'poll/home.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'poll'
+    ordering = ['-date_posted']
+
+

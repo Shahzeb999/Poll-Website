@@ -1,11 +1,12 @@
 {% extends "poll/base.html" %}
 {% block content %}
+<h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     {% for poll in polls %}
         <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ polls.author.profile.image.url }}">
+          <img class="rounded-circle article-img" src="{{ poll.author.profile.image.url }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="{% url 'user-polls':polls.author.username%}">{{ poll.author }}</a>
+              <a class="mr-2" href="{% url 'user-polls' polls.author.username%}">{{ poll.author }}</a>
               <small class="text-muted">{{ poll.date_posted|date:"F d, Y" }}</small>
             </div>
             <h2><a class="article-title" href="{% url 'poll-detail' poll.id %}">{{ poll.title }}</a></h2>
