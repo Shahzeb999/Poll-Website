@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 
     
 class Poll(models.Model):
@@ -20,3 +22,6 @@ class Poll(models.Model):
 
     def total(self):
         return self.option_one_count + self.option_two_count + self.option_three_count + self.option_four_count
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})

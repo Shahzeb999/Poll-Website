@@ -29,3 +29,17 @@
 a.navbar-brand, .panel-title {
 	font-weight: bolder;
 }
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+.article-img {
+   height: 65px;
+   width: 65px;
+   margin-right: 16px;
+}

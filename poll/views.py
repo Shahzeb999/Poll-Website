@@ -5,9 +5,8 @@ from .forms import CreatePollForm
 from .models import Poll
 
 def home(request):
-    polls = Poll.objects.all()
     context = {
-        'polls' : polls
+        'polls' : Poll.objects.all()
     }
     return render(request, 'poll/home.html', context)
 

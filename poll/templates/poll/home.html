@@ -13,7 +13,8 @@
              <ul class="list-group">
                 {% for poll in polls %}
                 <li class="list-group-item">
-                    <a class="mr-2" href="#">{{ poll.author }}</a><br>
+                    <img class="rounded-circle article-img" src="{{ poll.author.profile.image.url }}">
+                    <a class="mr-2" href=#>{{ poll.author }}</a><br>
                     <strong>{{ poll.question }}</strong>
                     <span class="pull-right">
                         <a href="{% url 'vote' poll.id %}" class="btn btn-info btn-xs">Vote</a> &nbsp;

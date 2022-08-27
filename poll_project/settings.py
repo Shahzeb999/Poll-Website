@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
